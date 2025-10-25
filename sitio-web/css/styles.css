@@ -1,74 +1,140 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f6f8;
-  margin: 0;
-  color: #333;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #fafafa;
+  color: #222;
+  line-height: 1.6;
 }
 
 header {
-  background-color: #222;
-  padding: 12px 0;
+  background-color: #111;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .nav {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 14px 0;
 }
 
 .nav a {
-  color: #f0f0f0;
+  color: #fff;
   text-decoration: none;
-  font-size: 15px;
-  transition: color 0.3s;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .nav a:hover {
-  color: #00c48c;
+  background-color: #333;
+  transform: translateY(-1px);
+}
+
+.nav a[aria-current="page"] {
+  background-color: #444;
 }
 
 .hero {
-  background-image: url(https://assets-blog.hostgator.mx/wp-content/uploads/2024/09/AnyConv.com__310509635_f67e67ed-6a6f-4352-96d1-24419861f393-scaled.webp);
-  color: white;
+  background-image: url("https://camp.ucss.edu.pe/wp-content/uploads/2021/09/img-llave-de-la-programacion.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 60px 20px;
+  color: #fff;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  max-width: 700px;
 }
 
 .hero h1 {
-  margin: 0 0 10px;
-  font-size: 2rem;
+  font-size: 42px;
+  margin-bottom: 10px;
 }
 
 .hero p {
-  font-size: 1.1rem;
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #f0f0f0;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #111;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #ddd;
+  transform: translateY(-2px);
+}
+
+main {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
 }
 
 .features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 260px;
+  padding: 25px 15px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
 footer {
-  background-color: #222;
-  color: #aaa;
+  background-color: #111;
+  color: #fff;
   text-align: center;
-  padding: 15px;
-  font-size: 14px;
+  padding: 25px 0;
+  font-size: 15px;
+  margin-top: 60px;
+}
+
+@media (max-width: 700px) {
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 15px; }
+  .card { width: 100%; max-width: 320px; }
 }
