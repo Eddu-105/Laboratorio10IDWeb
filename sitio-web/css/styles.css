@@ -29,21 +29,10 @@ header {
   border-radius: 4px;
   transition: background 0.2s ease, transform 0.2s ease;
 }
-
-.nav a:hover {
-  background-color: #333;
-  transform: translateY(-1px);
-}
-
-.nav a[aria-current="page"] {
-  background-color: #444;
-}
+.nav a:hover { background-color: #333; transform: translateY(-1px); }
+.nav a[aria-current="page"] { background-color: #444; }
 
 .hero {
-  background-image: url("https://camp.ucss.edu.pe/wp-content/uploads/2021/09/img-llave-de-la-programacion.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   min-height: 75vh;
   display: flex;
   align-items: center;
@@ -51,32 +40,24 @@ header {
   text-align: center;
   color: #fff;
   position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
 }
-
 .hero-inner {
   position: relative;
   z-index: 1;
   padding: 20px;
   max-width: 700px;
 }
-
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 25px;
-  color: #f0f0f0;
-}
+.hero h1 { font-size: 42px; margin-bottom: 10px; }
+.hero p  { font-size: 18px; margin-bottom: 25px; color: #f0f0f0; }
 
 .btn {
   display: inline-block;
@@ -88,10 +69,20 @@ header {
   font-weight: 600;
   transition: all 0.2s ease;
 }
+.btn:hover { background-color: #ddd; transform: translateY(-2px); }
 
-.btn:hover {
-  background-color: #ddd;
-  transform: translateY(-2px);
+body.home .hero {
+  background-image: url("https://camp.ucss.edu.pe/wp-content/uploads/2021/09/img-llave-de-la-programacion.jpg");
+}
+
+body.servicios .hero {
+  background-image: url("https://camp.ucss.edu.pe/wp-content/uploads/2021/09/img-llave-de-la-programacion.jpg");
+  min-height: 70vh;
+}
+
+body.portafolio .hero {
+  background-image: url("https://camp.ucss.edu.pe/wp-content/uploads/2021/09/img-llave-de-la-programacion.jpg");
+  min-height: 70vh;
 }
 
 main {
@@ -118,11 +109,26 @@ main {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+.card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+.portafolio-lista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 40px;
 }
+.portafolio-lista .item {
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 250px;
+  padding: 14px;
+  text-align: center;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.portafolio-lista .item:hover { background-color: #e9e9e9; transform: translateY(-2px); }
 
 footer {
   background-color: #111;
@@ -135,6 +141,6 @@ footer {
 
 @media (max-width: 700px) {
   .hero h1 { font-size: 28px; }
-  .hero p { font-size: 15px; }
-  .card { width: 100%; max-width: 320px; }
+  .hero p  { font-size: 15px; }
+  .card    { width: 100%; max-width: 320px; }
 }
