@@ -152,6 +152,26 @@ body.nosotros .hero .hero-inner {
   z-index: 1;
 }
 
+body.contacto .hero {
+  background-image: url("https://camp.ucss.edu.pe/wp-content/uploads/2021/09/img-llave-de-la-programacion.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 70vh;
+  color: #fff;
+  position: relative;
+}
+body.contacto .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+body.contacto .hero .hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
 footer {
   background-color: #111;
   color: #fff;
